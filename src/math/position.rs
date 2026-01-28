@@ -1,7 +1,7 @@
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Position {
-    pub x: i32,
-    pub y: i32,
+    x: i32,
+    y: i32,
 }
 
 impl Position {
@@ -13,8 +13,24 @@ impl Position {
         self.x
     }
 
+    pub fn get_mut_x(&mut self) -> &mut i32 {
+        &mut self.x
+    }
+
+    pub fn set_x(&mut self, value: i32) {
+        self.x = value;
+    }
+
     pub fn y(&self) -> i32 {
         self.y
+    }
+
+    pub fn get_mut_y(&mut self) -> &mut i32 {
+        &mut self.y
+    }
+
+    pub fn set_y(&mut self, value: i32) {
+        self.y = value;
     }
 
     pub fn to_index(self, row_width: i32) -> usize {
