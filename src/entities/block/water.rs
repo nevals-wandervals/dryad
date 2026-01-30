@@ -11,6 +11,7 @@ pub struct Water {
     pressure: Pressure,
     mass: Mass,
     volume: Volume,
+    solid_fraction: f32,
     water_fraction: f32,
     gas_fraction: f32,
 }
@@ -57,7 +58,7 @@ impl properties::Composition for Water {
     }
 
     fn solid_fraction(&self) -> f32 {
-        0.0
+        self.solid_fraction
     }
 
     fn gas_fraction(&self) -> f32 {
