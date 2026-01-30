@@ -1,7 +1,9 @@
-use crate::{entities::traits::properties::PhysicalProperties, math::units::{Mass, Pressure, Temperature, Volume}};
+use crate::{
+    entities::traits::properties::PhysicalProperties,
+    math::units::{Mass, Pressure, Temperature, Volume},
+};
 
 use super::super::traits::properties;
-
 
 #[derive(Debug, Clone, Copy)]
 pub struct Water {
@@ -47,7 +49,7 @@ impl properties::PhysicalProperties for Water {
     }
 }
 
-impl properties::ChemicalProperties for Water { }
+impl properties::ChemicalProperties for Water {}
 
 impl properties::Composition for Water {
     fn water_fraction(&self) -> f32 {

@@ -1,7 +1,9 @@
-use crate::{entities::traits::properties::PhysicalProperties, math::units::{Mass, Pressure, Temperature, Volume}};
+use crate::{
+    entities::traits::properties::PhysicalProperties,
+    math::units::{Mass, Pressure, Temperature, Volume},
+};
 
 use super::super::traits::properties;
-
 
 #[derive(Debug, Clone, Copy)]
 pub struct Live {
@@ -47,7 +49,7 @@ impl properties::PhysicalProperties for Live {
     }
 }
 
-impl properties::ChemicalProperties for Live { }
+impl properties::ChemicalProperties for Live {}
 
 impl properties::Composition for Live {
     fn water_fraction(&self) -> f32 {
