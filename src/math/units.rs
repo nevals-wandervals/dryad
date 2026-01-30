@@ -72,6 +72,19 @@ macro_rules! impl_traits_for_units {
                 }
             }
 
+            impl std::ops::Add<Self> for $id {
+                type Output = Self;
+                fn add(self, rhs: Self) -> Self::Output {
+                    Self::new(self.0 + rhs.0)
+                }
+            }
+
+            impl std::ops::AddAssign<Self> for $id {
+                fn add_assign(&mut self, rhs: Self) {
+                    self.0 += rhs.0;
+                }
+            }
+
             impl std::ops::Add<f32> for $id {
                 type Output = Self;
                 fn add(self, rhs: f32) -> Self::Output {
@@ -85,6 +98,18 @@ macro_rules! impl_traits_for_units {
                 }
             }
 
+            impl std::ops::Sub<Self> for $id {
+                type Output = Self;
+                fn sub(self, rhs: Self) -> Self::Output {
+                    Self::new(self.0 - rhs.0)
+                }
+            }
+
+            impl std::ops::SubAssign<Self> for $id {
+                fn sub_assign(&mut self, rhs: Self) {
+                    self.0 -= rhs.0;
+                }
+            }
 
             impl std::ops::Sub<f32> for $id {
                 type Output = Self;
@@ -99,6 +124,19 @@ macro_rules! impl_traits_for_units {
                 }
             }
 
+            impl std::ops::Mul<Self> for $id {
+                type Output = Self;
+                fn mul(self, rhs: Self) -> Self::Output {
+                    Self::new(self.0 * rhs.0)
+                }
+            }
+
+            impl std::ops::MulAssign<Self> for $id {
+                fn mul_assign(&mut self, rhs: Self) {
+                    self.0 *= rhs.0;
+                }
+            }
+
             impl std::ops::Mul<f32> for $id {
                 type Output = Self;
                 fn mul(self, rhs: f32) -> Self::Output {
@@ -109,6 +147,19 @@ macro_rules! impl_traits_for_units {
             impl std::ops::MulAssign<f32> for $id {
                 fn mul_assign(&mut self, rhs: f32) {
                     self.0.mul_assign(rhs);
+                }
+            }
+
+            impl std::ops::Div<Self> for $id {
+                type Output = Self;
+                fn div(self, rhs: Self) -> Self::Output {
+                    Self::new(self.0 / rhs.0)
+                }
+            }
+
+            impl std::ops::DivAssign<Self> for $id {
+                fn div_assign(&mut self, rhs: Self) {
+                    self.0 /= rhs.0;
                 }
             }
 
