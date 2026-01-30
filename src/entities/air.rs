@@ -3,7 +3,7 @@ use crate::{entities::traits::properties::PhysicalProperties, math::units::{Mass
 use super::traits::properties;
 
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct Air {
     temperature: Temperature,
     pressure: Pressure,

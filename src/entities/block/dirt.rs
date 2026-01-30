@@ -4,7 +4,7 @@ use super::super::traits::properties;
 
 
 #[derive(Debug, Clone, Copy)]
-pub struct Live {
+pub struct Dirt {
     temperature: Temperature,
     pressure: Pressure,
     mass: Mass,
@@ -13,7 +13,7 @@ pub struct Live {
     gas_fraction: f32,
 }
 
-impl properties::PhysicalProperties for Live {
+impl properties::PhysicalProperties for Dirt {
     fn temperature(&self) -> crate::math::units::Temperature {
         self.temperature
     }
@@ -47,9 +47,9 @@ impl properties::PhysicalProperties for Live {
     }
 }
 
-impl properties::ChemicalProperties for Live { }
+impl properties::ChemicalProperties for Dirt { }
 
-impl properties::Composition for Live {
+impl properties::Composition for Dirt {
     fn water_fraction(&self) -> f32 {
         self.water_fraction
     }
