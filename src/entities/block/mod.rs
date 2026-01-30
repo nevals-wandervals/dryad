@@ -6,5 +6,5 @@ pub enum Block {
     Dirt(),
     Stone(),
     Sand(),
-    Water()
+    Water(),
 }
