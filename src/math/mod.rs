@@ -1,3 +1,5 @@
+//! Definition of the basic mathematical /computational functionality for the operation of the engine and the client.
+
 pub mod position;
 pub mod units;
 
