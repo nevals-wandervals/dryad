@@ -3,7 +3,7 @@ use crate::{
     math::units::{Mass, Pressure, Temperature, Volume},
 };
 
-use super::super::traits::properties;
+use super::super::traits::{properties, Entity};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Dirt {
@@ -15,6 +15,8 @@ pub struct Dirt {
     water_fraction: f32,
     gas_fraction: f32,
 }
+
+impl Entity for Dirt { }
 
 impl properties::PhysicalProperties for Dirt {
     fn temperature(&self) -> crate::math::units::Temperature {

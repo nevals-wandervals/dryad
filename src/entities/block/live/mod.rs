@@ -3,7 +3,7 @@ use crate::{
     math::units::{Mass, Pressure, Temperature, Volume},
 };
 
-use super::super::traits::properties;
+use super::super::traits::{properties, Entity};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Live {
@@ -15,6 +15,8 @@ pub struct Live {
     water_fraction: f32,
     gas_fraction: f32,
 }
+
+impl Entity for Live {}
 
 impl properties::PhysicalProperties for Live {
     fn temperature(&self) -> crate::math::units::Temperature {
