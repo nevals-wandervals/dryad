@@ -8,3 +8,5 @@ license = "Apache-2.0"
 readme = "README.md"
 
 [dependencies]
+sdl3 = "0.17.3"
+image = { version = "0.25.9", default-features = false }
