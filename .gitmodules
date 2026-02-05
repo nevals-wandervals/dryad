@@ -1,0 +1,6 @@
+[submodule "dryad-engine"]
+	path = dryad-engine
+	url = ./dryad-engine
+[submodule "dryad-web-client"]
+	path = dryad-web-client
+	url = ./dryad-web-client
